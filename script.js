@@ -70,13 +70,17 @@ document.getElementById("secretCode").addEventListener("keydown", function(event
 
 
 function playWithSound() {
-    const video = document.getElementById("memoryVideo");
+  const video = document.querySelector("video");
+  const tombol = document.querySelector(".sound-button");
 
+  if (video.muted) {
     video.muted = false;
-    video.volume = 1;
     video.play();
-
-    document.querySelector(".sound-button").style.display = "none";
+    tombol.textContent = "♡ Matikan Suara ♡";
+  } else {
+    video.muted = true;
+    tombol.textContent = "♡ Putar dengan Suara ♡";
+  }
 }
 
 // MUSIK BACKGROUND
